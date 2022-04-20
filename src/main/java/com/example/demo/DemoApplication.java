@@ -12,6 +12,6 @@ public class DemoApplication {
 		//地方打算复读dsaadsfdssas
 
 		//dskapkoddsadsa vdsafsa
-		SpringApplication.run(DemoApplication.class, args);
+		 SpringApplication.run(DemoApplication.class, args);
 	}
 }
