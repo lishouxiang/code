@@ -8,15 +8,16 @@ public class SplitLockDemo {
     //原子引用线程
     AtomicReference<Thread> atomicReference = new AtomicReference<>();
 
-
-
     public void myLock() {
 
         Thread thread = Thread.currentThread();
+
         System.out.println(Thread.currentThread().getName() + "\t come in......");
+
         while (!atomicReference.compareAndSet(null, thread)) {
 
         }
+
 
     }
 
@@ -52,11 +53,11 @@ public class SplitLockDemo {
         new Thread(() -> {
             try {
                 splitLockDemo.myLock();
-                 try {
-                       TimeUnit.SECONDS.sleep(1);
-                      } catch (Exception e) {
-                       e.printStackTrace();
-                   }
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 splitLockDemo.MyUnLock();
             } catch (Exception e) {
                 e.printStackTrace();
