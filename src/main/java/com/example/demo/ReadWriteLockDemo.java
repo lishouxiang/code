@@ -14,27 +14,29 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  * 写---写 互斥不共存
  * 写---读 互斥不共存
  * 读--读 不互斥共享
- *
+ * <p>
  * 写操作：中间必须是一个完整的统一体，中间不允许被打断
  */
 
 class MyCache {
-    private volatile Map<String, Object> map = new HashMap<>();
-    private ReentrantReadWriteLock readWriteLock =new ReentrantReadWriteLock();
+
+    private  volatile Map<String, Object> map = new HashMap<>();
+    private  ReentrantReadWriteLock readWriteLock = new ReentrantReadWriteLock();
 
     // 写入数据
     public void put(String key, Object value) {
         readWriteLock.writeLock().lock();
         try {
-            System.out.println(Thread.currentThread().getName()+"号线程写入数据开始，key="+key);
+            System.out.println(Thread.currentThread().getName() + "号线程写入数据开始，key=" + key);
             map.put(key, value);
             // 模拟程序执行过程，但是不会出现多次连续写
             try {
                 TimeUnit.MICROSECONDS.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
+
             }
-            System.out.println(Thread.currentThread().getName()+"号线程写入数据结束");
+            System.out.println(Thread.currentThread().getName() + "号线程写入数据结束");
         } finally {
             readWriteLock.writeLock().unlock();
         }
@@ -44,7 +46,7 @@ class MyCache {
     public void get(String key) {
         readWriteLock.readLock().lock();
         try {
-            System.out.println(Thread.currentThread().getName()+"号线程读出数据开始");
+            System.out.println(Thread.currentThread().getName() + "号线程读出数据开始");
             Object o = map.get(key);
             // 模拟程序执行过程，可以出现多次连续读
             try {
@@ -52,7 +54,7 @@ class MyCache {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println(Thread.currentThread().getName()+"号线程读出数据结束，key="+key);
+            System.out.println(Thread.currentThread().getName() + "号线程读出数据结束，key=" + key);
         } finally {
             readWriteLock.readLock().unlock();
         }
@@ -65,13 +67,13 @@ public class ReadWriteLockDemo {
         for (int i = 1; i <= 5; i++) {
             int tempInt = i;
             new Thread(() -> {
-                myCache.put(tempInt+"",tempInt+"");
+                myCache.put(tempInt + "", tempInt + "");
             }, String.valueOf(tempInt)).start();
         }
-        for (int i = 1; i <=5; i++) {
-            int tempInt =i;
+        for (int i = 1; i <= 5; i++) {
+            int tempInt = i;
             new Thread(() -> {
-                myCache.get(tempInt+"");
+                myCache.get(tempInt + "");
             }, String.valueOf(tempInt)).start();
         }
 
