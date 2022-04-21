@@ -8,6 +8,8 @@ public class SplitLockDemo {
     //原子引用线程
     AtomicReference<Thread> atomicReference = new AtomicReference<>();
 
+
+
     public void myLock() {
 
         Thread thread = Thread.currentThread();
