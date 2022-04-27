@@ -20,7 +20,7 @@ import java.util.concurrent.Executors;
 public class ThreadLocalDemo01 {
 
     public static void main(String[] args) {
-            new Service1().service1();
+        new Service1().service1();
     }
 }
 

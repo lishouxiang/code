@@ -12,7 +12,7 @@ public class CASDemo {
 
     public static void main(String[] args) {
 
-        AtomicInteger atomicInteger =new AtomicInteger(5);
+         AtomicInteger atomicInteger =new AtomicInteger(5);
         System.out.println(atomicInteger.compareAndSet(5, 2019)+"\t 当前值 "+atomicInteger.get());//true	 当前值 2019
 
         System.out.println(atomicInteger.compareAndSet(5, 1024)+"\t 当前值 "+atomicInteger.get());// false	 当前值 2019
