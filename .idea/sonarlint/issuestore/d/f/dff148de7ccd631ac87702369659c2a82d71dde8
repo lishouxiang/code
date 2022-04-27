@@ -1,0 +1,17 @@
+
+m
+java:S11047"RMake holder a static final constant or non-public and provide accessors if needed.(ºÎ‰¢úÿÿÿÿ
+G
+java:S14447",Make this "public static holder" field final(ºÎ‰¢úÿÿÿÿ
+N	java:S106'"9Replace this use of System.out or System.err by a logger.(š¥±í
+U	java:S1060"9Replace this use of System.out or System.err by a logger.(ÃúÆÿ8®Š¡Ô†0
+U
+java:S11186":Add a private constructor to hide the implicit public one.(ôéàäøÿÿÿÿ
+T
+java:S1128"7Remove this unused import 'java.text.SimpleDateFormat'.(ú¡ÙÛ8²Ì Ô†0
+H
+java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü8´Ì Ô†0
+c
+java:S1128"ARemove this unused import 'java.util.concurrent.ExecutorService'.(æ÷–£ùÿÿÿÿ8´Ì Ô†0
+]
+java:S1128";Remove this unused import 'java.util.concurrent.Executors'.(äåÒÛÿÿÿÿÿ8´Ì Ô†0

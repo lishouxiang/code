@@ -27,6 +27,8 @@
 *.via
 *.tmp
 *.err
+*.iml
+*.xml
 # OS generated files #  
 .DS_Store  
 .DS_Store?  
