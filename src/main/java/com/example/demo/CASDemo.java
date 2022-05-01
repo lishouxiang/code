@@ -1,6 +1,9 @@
 package com.example.demo;
 
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @author lishouxiang
@@ -11,6 +14,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class CASDemo {
 
     public static void main(String[] args) {
+
 
          AtomicInteger atomicInteger =new AtomicInteger(5);
         System.out.println(atomicInteger.compareAndSet(5, 2019)+"\t 当前值 "+atomicInteger.get());//true	 当前值 2019
