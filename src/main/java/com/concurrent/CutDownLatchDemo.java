@@ -31,7 +31,7 @@ public class CutDownLatchDemo {
                 cutDown.countDown();
             }, String.valueOf(i)).start();
         }
-        cutDown.await();
+         cutDown.await();
         System.out.println(Thread.currentThread().getName()+"\t 88班长锁门，走人");
     }
 }
