@@ -24,6 +24,8 @@
 *.tar  
 *.zip  
 *.via
+*.pb
+*.jar
 *.tmp
 *.err
 *.iml
