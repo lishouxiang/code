@@ -17,7 +17,7 @@ public class CutDownLatchDemo {
             new Thread(() -> {
                 System.out.println(Thread.currentThread().getName()+"\t 国在，被灭");
                 cutDown.countDown();
-            }, String.valueOf(i)).start();
+            }, CountryEnum.getCountryElement(i).getResMessage()).start();
         }
         cutDown.await();
         System.out.println(Thread.currentThread().getName()+"\t 秦灭六国，一统华夏");
