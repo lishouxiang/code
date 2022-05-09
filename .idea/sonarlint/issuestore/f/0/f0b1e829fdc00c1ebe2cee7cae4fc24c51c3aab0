@@ -1,8 +1,0 @@
-
-o
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ËĞÃı
-e
-java:S2095"JUse try-with-resources or close this "JedisCluster" in a "finally" clause.(¹Ø¢‡şÿÿÿÿ
-N	java:S106"9Replace this use of System.out or System.err by a logger.(ä¿À³
-Q
-java:S1128"6Remove this unused import 'redis.clients.jedis.Jedis'.(úœÅıÿÿÿÿ
